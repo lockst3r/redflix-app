@@ -1,18 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
-import Navigation from './app/navigation/Navigation';
-import { NativeWindStyleSheet } from "nativewind";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Navigation from "./app/navigation/navigation";
+import { AuthProvider } from "./app/providers/auth/auth-provider";
 
 export default function App() {
   return (
     <>
-    <SafeAreaProvider>
-      <SafeAreaView />
-      <Navigation />
-      
-    </SafeAreaProvider>
-    <StatusBar style='light'/>
+      <AuthProvider>
+        <SafeAreaProvider>
+          <Navigation />
+        </SafeAreaProvider>
+      </AuthProvider>
+      <StatusBar style="light" />
     </>
   );
 }
