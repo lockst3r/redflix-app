@@ -10,7 +10,7 @@ const Auth: FC = () => {
   const { handleSubmit, reset, control } = useForm<IAuthFormData>({
     mode: "onChange",
   });
-
+ 
   const onSubmit: SubmitHandler<IAuthFormData> = (data) => {
     const { email, password } = data;
   };
