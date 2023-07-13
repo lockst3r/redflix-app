@@ -7,9 +7,8 @@ import {
 	useState
 } from 'react'
 
-/* import { getAccessToken, getUserFromStorage } from '@/services/auth/auth.helper' */
-
 import { IContext, TypeUserState } from './auth-provider.interfaces'
+import { getAccessToken, getUserFromStorage } from '../../services/auth/auth.helper'
 
 export const AuthContext = createContext({} as IContext)
 
@@ -23,12 +22,12 @@ export const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 
 		const checkAccessToken = async () => {
 			try {
-			/* 	const accessToken = await getAccessToken()
+				const accessToken = await getAccessToken()
 
 				if (accessToken) {
 					const user = await getUserFromStorage()
 					if (isMounted) setUser(user)
-				} */
+				}
 			} catch {
 			} finally {
 				await SplashScreen.hideAsync()

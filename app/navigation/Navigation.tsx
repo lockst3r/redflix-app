@@ -6,6 +6,7 @@ import {
 import { PrivateNavigation } from "./private-navigation";
 import { useAuth } from "../hooks/useAuth";
 import { BottomMenu } from "../components/ui/layout/bottom-menu";
+import { useCheckAuth } from "../providers/auth/useCheckAuth";
 
 const Navigation: FC = () => {
   const { user } = useAuth();
@@ -26,6 +27,8 @@ const Navigation: FC = () => {
       navRef.removeListener("state", listener);
     };
   }, []);
+
+  useCheckAuth(currentRoute)
 
   return (
     <>
